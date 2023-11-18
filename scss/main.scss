@@ -1,0 +1,402 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@mixin onlylarge($w)
+{
+    @media only screen and (max-width: $w)
+    {
+        @content;
+    }
+}
+
+.wrapper{
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Poppins";
+}
+
+.center{
+	max-width: 1829px;
+	width: 100%;
+	margin: 0 auto;
+    @include onlylarge(1800px) {max-width: 95%;}
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    @include onlylarge(500px) {justify-content: center;}
+    .logo{
+        padding-top: 32px;
+        
+    }
+    .logo-info{
+        display: flex;
+        justify-content: space-between;
+        width: 1515px;
+        @include onlylarge(1800px) {margin-left: 20px;}
+        @include onlylarge(760px) {justify-content: flex-end}
+        @include onlylarge(500px) { display: none;}
+        h3{
+            color: #0F0F0F;
+            font-size: 30px;
+            font-weight: 600;
+            padding-top: 37px;
+            @include onlylarge(760px) { display: none;}
+        }
+        .logo-avatar{
+            padding-top: 32px;
+            display: grid;
+            grid-template-columns: 56px 129px;
+            column-gap: 26px;
+            h4{
+                color: #2E2E2E;
+                font-size: 18px;
+                font-weight: 600;
+                padding-bottom: 4px;
+                padding-top: 10px;
+            }
+            p{
+                color: #2E2E2E;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    @include onlylarge(1024px) {display: block;}
+    .menu-buttons{
+        width: 263px;
+        
+        .dashboard{
+            display: grid;
+            grid-template-columns: 34px 1fr; 
+            padding:  17px 52px 17px 34px;
+            border-radius: 22px;
+            background: linear-gradient(83deg, #1362FC 17.33%, #13A8FC 98.93%);
+            p{
+                color: #FFF;
+                font-size: 18px;
+                font-weight: 600;
+                padding-left: 42px;
+                align-self: center;
+            }    
+        }
+        .calendar{
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        padding:  17px 52px 17px 34px;
+        border-radius: 22px;
+        margin-top: 16px;
+        p{
+            color: #BFBFBF;
+            font-size: 18px;
+            font-weight: 500;
+            padding-left: 42px;
+            align-self: center;
+        }   
+        }
+    }
+    .cart{
+        display: grid;
+        grid-template-columns: 339px 339px 339px 339px;
+        grid-template-rows: 164px;
+        column-gap: 39px;
+        @include onlylarge(1800px) {grid-template-columns: 339px 339px; grid-template-rows: 164px 164px;row-gap: 39px;}
+        @include onlylarge(1024px) {margin-top: 50px;}
+        @include onlylarge(760px) {grid-template-columns: 339px;grid-template-rows: 164px 164px 164px 164px;row-gap: 20px; justify-content: center }
+        h3{
+            color: #FFF;
+            font-size: 36px;
+            font-weight: 600;
+            padding-top: 38px;
+            padding-left: 36px;
+            
+            height: 54px;
+        }
+        p{
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 500;
+            padding-left: 36px;
+            padding-top: 45px;
+        }
+        img{
+            padding-top: 53px;
+            position: absolute;
+            margin-left: 245px;
+        }
+        .cartone{
+            border-radius: 22px;
+            background: linear-gradient(77deg, #59BCFF 47.6%, #59D7FF 107%);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 58px;
+            
+
+        }
+        .cartwo{
+            border-radius: 22px;
+            background: linear-gradient(77deg, #4AD994 47.6%, #57F998 107%);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 58px;
+        }
+        .cartthree{
+            border-radius: 22px;
+            background: linear-gradient(77deg, #FDB765 47.6%, #FFE485 107%);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 58px;
+        }
+
+        .cartfour{
+            border-radius: 22px;
+            background: linear-gradient(77deg, #FF6D59 47.6%, #FFD584 107%);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 58px;
+        }
+    }
+}
+
+.spingrafprog{
+    display: grid;
+    grid-template-columns: 339px 1fr;
+    padding-left: 445px;
+    margin-top: 128px;
+    column-gap: 39px;
+    @include onlylarge(1800px) { padding-left: 0;}
+    @include onlylarge(1500px) { display: flex; flex-direction: column; align-items: center}
+    @include onlylarge(760px) {margin-top: 50px;}
+
+
+    .spinner{
+        height: 245px;
+        border-radius: 22px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+        text-align: center;
+    
+        .spinner-border{
+            width: 95px;
+            height: 95px;
+            color: blue;
+            margin-top: 27px;
+            margin-bottom: 17px;
+            @include onlylarge(700px) {width: 85px;height: 85px;}
+            @include onlylarge(400px) {width: 65px;height: 65px;}
+
+        }
+        h3{
+            color: #2E2E2E;
+            font-size: 38px;
+            font-weight: 600;
+            height: 57px;
+            @include onlylarge(700px) {font-size: 30px;}
+            @include onlylarge(400px) {font-size: 20px;}
+
+        }
+        p{
+            color: #2E2E2E;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+    .graffic{
+        grid-column: 2;
+        grid-row: 1/3;
+        border-radius: 22px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+        
+        h3{
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+            padding-bottom: 9px;
+            padding-top: 38px;
+            padding-left: 32px;
+            
+        }
+        img{
+            padding-left: 32px;
+            padding-top: 50px ;
+            @include onlylarge(1024px) {width: 95%;height: 95%;}
+            @include onlylarge(400px){padding-top: 20px;}
+        }
+        .text{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 32px;
+            h5{
+                color: #999;
+                font-size: 14px;
+                font-weight: 400;                               
+            }
+            .Planes{
+                display: flex;
+                width: 410px;
+                margin-right: 125px;
+                justify-content: space-between;
+                @include onlylarge(1800px) { margin-right: 330px;}
+                @include onlylarge(1024px) {margin-right: 5%;width: 210px;}
+                @include onlylarge(400px) {width: 150px;}
+
+                p{
+                    color: #000;
+                    font-size: 24px;
+                    font-weight: 600;
+                    @include onlylarge(1024px) {font-size: 18px;}
+                    @include onlylarge(400px) {font-size: 10px;}
+                    span{
+                        color: rgba(0, 0, 0, 0.50);
+                        font-size: 14px;
+                        font-weight: 400;
+                        padding-left: 39px;
+                        @include onlylarge(1024px) {font-size: 10px;padding-left: 15px}
+                        @include onlylarge(400px) {font-size: 6px;padding-left: 7px}
+                    }
+                }
+            }
+        }
+    }
+    .Reservas{
+        height: 272px;
+        border-radius: 22px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03);
+        padding: 30px;
+        margin-top: 39px;
+        h3{
+            color: #2E2E2E;
+            font-size: 18px;
+            font-weight: 500;
+            padding-bottom:  30px;
+
+        }
+        .progress{
+            margin-bottom: 20px;  
+        }
+        .one{
+            --bs-progress-bar-bg: #F6943A ;
+        }
+        .two{
+            --bs-progress-bar-bg: #42AE94;   
+        }
+        .three{
+            --bs-progress-bar-bg: #9658C7  ;
+        }
+        .imgshot{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 12px;
+            p{
+                color: #707070;
+                font-size: 12px;
+                font-weight: 400;
+                @include onlylarge(1500px) {padding-right: 5px;} 
+            }
+            img{
+                padding-right: 6px;
+            }
+        }
+        .ppptut{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;     
+            p{
+                color: #262626;
+                font-size: 16px;
+                font-weight: 600;
+                
+            }
+        }
+    }
+
+}
+.footer{
+    @include onlylarge(400px){text-align: center;}
+    padding-top: 88px;
+    .text{
+        h3{
+            color: #969BA0;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 26px; /* 152.941% */
+            padding-bottom: 6px;
+        }
+        .text-yers{
+            color: #969BA0;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+        }
+        .footer-text{
+            color: #969BA0;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 42px;
+            padding-top: 18px;
+            span{
+                color: red;
+            }
+        }
+      
+    }
+}
